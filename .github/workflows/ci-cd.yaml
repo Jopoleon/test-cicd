@@ -39,4 +39,4 @@ jobs:
           script: |
             sudo docker pull jopoleon/tsm_test:latest
             sudo docker stop tsm_test || true
-            sudo docker run --rm -d --name tsm_test -p 80:8080 tsm_test:latest
+            sudo docker run --rm -d --name tsm_test -p 80:8080 tsm_test
