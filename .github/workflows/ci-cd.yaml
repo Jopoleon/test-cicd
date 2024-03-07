@@ -37,6 +37,6 @@ jobs:
           username: ${{ secrets.AWS_USERNAME }}
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
-            docker pull jopoleon/tsm_test:latest
-            docker stop tsm_test || true
-            docker run --rm -d --name tsm_test -p 80:8080 tsm_test:latest
+            sudo docker pull jopoleon/tsm_test:latest
+            sudo docker stop tsm_test || true
+            sudo docker run --rm -d --name tsm_test -p 80:8080 tsm_test:latest
