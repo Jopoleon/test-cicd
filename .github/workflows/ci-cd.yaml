@@ -25,7 +25,7 @@ jobs:
 
       # Шаг 3: Push образа в Docker Hub или другой реестр
       - name: Push Docker image
-        run: docker push jopoleon/tsm_test
+        run: docker push jopoleon/tsm_test:latest
 
       # Шаг 4: Деплой на AWS EC2
       # Этот шаг потребует настройки SSH доступа или использования AWS CodeDeploy
@@ -38,5 +38,5 @@ jobs:
           key: ${{ secrets.AWS_SSH_KEY }}
           script: |
             sudo docker pull jopoleon/tsm_test:latest
-            sudo docker stop tsm_test || true
-            sudo docker run --rm -d --name tsm_test -p 80:8080 tsm_test
+            sudo docker stop jopoleon/tsm_test:latest || true
+            sudo docker run --rm -d --name jopoleon/tsm_test:latest -p 80:8080 jopoleon/tsm_test:latest
