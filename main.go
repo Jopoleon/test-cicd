@@ -10,7 +10,7 @@ import (
 
 func main() {
 
-	serverPort := ":3000"
+	serverPort := ":8080"
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
